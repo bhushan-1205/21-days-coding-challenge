@@ -3,12 +3,12 @@ import java.util.Scanner;
 
 public class KthLargestElement {
     public static int findKthLargest(int[] arr, int k) {
-        Arrays.sort(arr); // Sorts the array in ascending order
-        return arr[arr.length - k]; // Kth largest element
+        Arrays.sort(arr);
+        return arr[arr.length - k]; 
     }
 
     public static void main(String[] args) {
-        int[] arr = {10, 14, 19, 26, 27, 31, 33, 35, 42, 44}; // Given array
+        int[] arr = {10, 14, 19, 26, 27, 31, 33, 35, 42, 44}; 
         
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the value of K: ");
