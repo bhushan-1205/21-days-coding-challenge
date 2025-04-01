@@ -21,15 +21,15 @@ public class Day5Challenge {
     public void addOrder(String orderId, String customerId, List<String> productCodes) {
         orders.add(new Order(orderId, customerId, productCodes));
 
-        // Add to unique product list
+      
         uniqueProducts.addAll(productCodes);
 
-        // Update product sales count
+       
         for (String product : productCodes) {
             productSales.put(product, productSales.getOrDefault(product, 0) + 1);
         }
 
-        // Track customer's unique product purchases
+       
         customerProducts.putIfAbsent(customerId, new HashSet<>());
         customerProducts.get(customerId).addAll(productCodes);
     }
@@ -58,14 +58,14 @@ public class Day5Challenge {
     public static void main(String[] args) {
         Day5Challenge analyzer = new Day5Challenge();
 
-        // Sample Orders
+      
         analyzer.addOrder("O1", "C1", Arrays.asList("P1", "P2", "P3"));
         analyzer.addOrder("O2", "C2", Arrays.asList("P2", "P3", "P4"));
         analyzer.addOrder("O3", "C1", Arrays.asList("P1", "P4", "P5"));
         analyzer.addOrder("O4", "C3", Arrays.asList("P6", "P7"));
         analyzer.addOrder("O5", "C2", Arrays.asList("P2", "P8"));
 
-        // Printing Results Line by Line
+       
         System.out.println("Unique Products:");
         for (String product : analyzer.getUniqueProducts()) {
             System.out.println(product);
